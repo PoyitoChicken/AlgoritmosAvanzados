@@ -1,8 +1,11 @@
+// Oscar Cortes A00825972
+// Natalia Salgado A01571008
+
+// Sort de mayor a menor, solo se ingresa N y N cantidad de doubles
+
 #include <iostream>
 #include <vector>
 using namespace std;
-
-// Sort de mayor a menor, solo se ingresa N y N cantidad de doubles
 
 class MergeSort{
     private:
