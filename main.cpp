@@ -69,7 +69,7 @@ class MergeSort{
                 cin >> num;
                 nums.push_back(num); // se agregan al vector
             }
-            cout << "ended" << endl;
+            cout << "Terminado" << endl;
             merge_sort(nums); // se llama la funcion merge sort
             print_nums(nums);
         }
