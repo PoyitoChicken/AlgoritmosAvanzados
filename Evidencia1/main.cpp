@@ -24,6 +24,14 @@ int main() {
     cout << "Checking if transmission 2 is malicious..." << endl;
     isMalicious = t2.isMalicious(mcode);
     isMalicious ? cout << "Transmission 2 is malicious" : cout << "Transmission 2 is not malicious";
-    
+    cout << "\n\n";
+
+    vector<int> palindromes = t1.palindromeSubstring();
+    cout << "Palindromes found in transmission 1: " << palindromes[0] << " " << palindromes[1] << endl;
+    cout << endl;
+
+    palindromes = t2.palindromeSubstring();
+    cout << "Palindromes found in transmission 2: " << palindromes[0] << " " << palindromes[1] << endl;
+    cout << endl;
     return 0;
 }

@@ -30,6 +30,7 @@ class Scanner : public reader {
         }
         bool isMalicious(reader mcode);
         void longestCommonSubstring(vector<string> transmissions);
+        vector<int> palindromeSubstring();
     private:
         string filename;
         string content;
@@ -127,6 +128,8 @@ bool Scanner::isMalicious(reader mcode) {
 }
 
 void getLPSarray(string pat, int M, int* lps)
+
+
 {
     int len = 0;
  
@@ -153,4 +156,39 @@ void getLPSarray(string pat, int M, int* lps)
             }
         }
     }
+}
+
+vector<int> Scanner::palindromeSubstring() {
+    vector<int> result;
+    int n = content.size();
+    if (n == 0) {
+        return result;
+    }
+    int maxLength = 1;
+    int start = 0;
+    for (int i = 1; i < n; i++) {
+        int low = i - 1;
+        int high = i;
+        while (low >= 0 && high < n && content[low] == content[high]) {
+            if (high - low + 1 > maxLength) {
+                start = low;
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
+        low = i - 1;
+        high = i + 1;
+        while (low >= 0 && high < n && content[low] == content[high]) {
+            if (high - low + 1 > maxLength) {
+                start = low;
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
+    }
+    result.push_back(start);
+    result.push_back(start + maxLength - 1);
+    return result;
 }
